@@ -9,13 +9,21 @@ import retrofit2.http.Query
 internal interface SportDBService {
 
     @GET("/api/v1/json/{apiKey}/eventspastleague.php")
-    suspend fun getLastMatches(@Path("apiKey") apiKey: String? = SportDB.getApiKey(), @Query("id") id: String): MatchesResponse
-
+    suspend fun getLastMatches(
+        @Path("apiKey") apiKey: String? = SportDB.getApiKey(),
+        @Query("id") id: String
+    ): MatchesResponse
 
     @GET("/api/v1/json/{apiKey}/eventsnextleague.php")
-    suspend fun getNextMatches(@Path("apiKey") apiKey: String? = SportDB.getApiKey(), @Query("id") id: String): MatchesResponse
+    suspend fun getNextMatches(
+        @Path("apiKey") apiKey: String? = SportDB.getApiKey(),
+        @Query("id") id: String
+    ): MatchesResponse
 
     @GET("/api/v1/json/{apiKey}/lookupevent.php")
-    suspend fun getDetailMatch(@Path("apiKey") apiKey: String? = SportDB.getApiKey(), @Query("id") id: String): MatchesResponse
+    suspend fun getDetailMatch(
+        @Path("apiKey") apiKey: String? = SportDB.getApiKey(),
+        @Query("id") id: String
+    ): MatchesResponse
 
 }
